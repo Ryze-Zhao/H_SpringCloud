@@ -32,7 +32,7 @@ Maven版本：3.5+
 #### 使用说明
 H_SpringCloud父模块
 
-1   
+1   cloud_payment_service_8001                                  SpringCloud(H版)：服务提供者8001
 
 
 
