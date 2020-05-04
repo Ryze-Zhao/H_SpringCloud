@@ -1,0 +1,6 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud_consumer_oreder
