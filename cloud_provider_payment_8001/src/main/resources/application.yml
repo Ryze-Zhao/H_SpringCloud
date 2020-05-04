@@ -1,0 +1,17 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud_payment_service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: com.mysql.cj.jdbc.Driver             # mysql驱动包(可支持mysql8)
+    url: jdbc:mysql://localhost:3306/h_spring_cloud?useUnicode=true&characterEncoding=utf-8&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: mysql123
+
+
+mybatis-plus:
+  mapper-locations: classpath*:com/ryzezhao/springcloud/**/mapper/xml/*Mapper.xml       # 这个意思把mapper.xml放在这个路径下（也可以放在resources，路径改为resourceds对应路径）
+  type-aliases-package: com.ryzezhao.springcloud.entities                               # 所有Entity别名类所在包(对应common模块的，以后会使用到)
