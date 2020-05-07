@@ -33,7 +33,8 @@ Maven版本：3.5+
 H_SpringCloud父模块
 
 1   cloud_payment_service_8001                                  SpringCloud(H版)：服务提供者8001
-
+2   cloud_consumer_order_80                                     SpringCloud(H版)：服务消费者80
+3   cloud_eureka_server_7001                                    SpringCloud(H版)：服务注册与发现Eureka7001
 
 
 
