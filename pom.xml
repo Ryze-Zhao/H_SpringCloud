@@ -11,9 +11,9 @@
 
     <!-- 子模块 -->
     <modules>
-
         <module>cloud_provider_payment_8001</module>
         <module>cloud_consumer_order_80</module>
+        <module>cloud_eureka_server_7001</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
