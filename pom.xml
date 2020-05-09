@@ -14,6 +14,8 @@
         <module>cloud_provider_payment_8001</module>
         <module>cloud_consumer_order_80</module>
         <module>cloud_eureka_server_7001</module>
+        <module>cloud_eureka_server_7002</module>
+
     </modules>
 
     <!-- 统一管理jar包版本 -->
