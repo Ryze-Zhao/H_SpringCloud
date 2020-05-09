@@ -3,7 +3,8 @@ server:
 
 spring:
   application:
-    name: cloud_consumer_oreder
+    #千万不要用模块的名字，因为服务使用下划线会导致Ribbon实现负载均衡时请求不到服务
+    name: cloud-consumer-oreder
 
 
 eureka:

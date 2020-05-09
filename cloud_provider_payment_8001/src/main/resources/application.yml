@@ -3,7 +3,8 @@ server:
 
 spring:
   application:
-    name: cloud_payment_service
+    #千万不要用模块的名字，因为服务使用下划线会导致Ribbon实现负载均衡时请求不到服务
+    name: cloud-payment-service
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.cj.jdbc.Driver             # mysql驱动包(可支持mysql8)
