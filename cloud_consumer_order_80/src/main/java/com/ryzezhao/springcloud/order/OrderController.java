@@ -13,7 +13,9 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("/cloud/consumer")
 public class OrderController {
     /** 服务提供者的URL*/
-    public static final String PAYMENT_URL = "http://localhost:8001";
+//    public static final String PAYMENT_URL = "http://localhost:8001";
+    /** 服务提供者的spring.application.name，可从服务提供者的yml找到名称*/
+    public static final String PAYMENT_URL = "http://cloud-payment-service";
 
     @Autowired
     private RestTemplate restTemplate;
