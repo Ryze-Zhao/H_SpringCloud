@@ -23,6 +23,11 @@ eureka:
 #      defaultZone: http://localhost:7001/eureka
       # 集群版
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+  instance:
+    instance-id: cloud_payment_service_8001
+    #访问路径可以显示IP地址
+    prefer-ip-address: true
+
 
 mybatis-plus:
   mapper-locations: classpath*:com/ryzezhao/springcloud/**/mapper/xml/*Mapper.xml       # 这个意思把mapper.xml放在这个路径下（也可以放在resources，路径改为resourceds对应路径）
