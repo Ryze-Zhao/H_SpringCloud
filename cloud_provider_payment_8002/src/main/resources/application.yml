@@ -27,7 +27,10 @@ eureka:
     instance-id: cloud_payment_service_8002
     #访问路径可以显示IP地址
     prefer-ip-address: true
-
+    #Eureka客户端向服务端发送心跳的时间间隔，单位为秒(默认是30秒)
+    lease-renewal-interval-in-seconds: 1
+    #Eureka服务端在收到最后一次心跳后等待时间上限，单位为秒(默认是90秒)，超时将剔除服务
+    lease-expiration-duration-in-seconds: 2
 
 mybatis-plus:
   mapper-locations: classpath*:com/ryzezhao/springcloud/**/mapper/xml/*Mapper.xml       # 这个意思把mapper.xml放在这个路径下（也可以放在resources，路径改为resourceds对应路径）
