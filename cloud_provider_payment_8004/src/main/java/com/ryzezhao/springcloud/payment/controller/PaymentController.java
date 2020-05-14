@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import com.ryzezhao.springcloud.payment.common.Result;
 import java.util.UUID;
 
 @RestController
@@ -17,8 +17,7 @@ public class PaymentController
     private String serverPort;
 
     @GetMapping(value = "/payment/zk")
-    public String paymentzk()
-    {
-        return "Springcloud With Zookeeper: "+serverPort+"\t"+ UUID.randomUUID().toString();
+    public Result<Object> paymentzk() {
+        return Result.ok("Springcloud With Zookeeper: " + serverPort + "\t" + UUID.randomUUID().toString());
     }
 }
