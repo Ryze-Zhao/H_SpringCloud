@@ -21,6 +21,7 @@
         <module>cloud_consumer_order_zookeeper_84</module>
         <!-- 下面两个子模块：是Consul作为注册中心 -->
         <module>cloud_provider_payment_8006</module>
+        <module>cloud_consumer_order_consul_86</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
