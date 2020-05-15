@@ -36,6 +36,9 @@ H_SpringCloud父模块
 2   cloud_consumer_order_80                                     SpringCloud(H版)：服务消费者80
 3   cloud_eureka_server_7001                                    SpringCloud(H版)：服务注册与发现Eureka7001
 4   cloud_eureka_server_7002                                    SpringCloud(H版)：服务注册与发现Eureka7002 
+5   cloud_provider_payment_8002                                 SpringCloud(H版)：服务提供者8002
+6   cloud_provider_payment_8004                                 SpringCloud(H版)：服务提供者8004（以Zookeeper作为注册中心）
+7   cloud_consumer_order_zookeeper_84                           SpringCloud(H版)：服务消费者84（以Zookeeper作为注册中心）
 
 
 
