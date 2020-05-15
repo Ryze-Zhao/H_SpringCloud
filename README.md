@@ -6,7 +6,7 @@
 （暂定）
 SpringBoot版本：2.2.6.RELEASE
 SpringCloud版本：Hoxton SR4
-SpringCloudAlibaba版本：2.2.6.RELEASE
+SpringCloudAlibaba版本：2.2.1.RELEASE
 JDK版本：8
 MySQL版本：5.7+
 Maven版本：3.5+

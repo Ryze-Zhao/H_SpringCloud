@@ -19,6 +19,8 @@
         <!-- 下面两个子模块：是Zookeeper作为注册中心 -->
         <module>cloud_provider_payment_8004</module>
         <module>cloud_consumer_order_zookeeper_84</module>
+        <!-- 下面两个子模块：是Consul作为注册中心 -->
+        <module>cloud_provider_payment_8006</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
@@ -33,7 +35,7 @@
         <druid.version>1.1.22</druid.version>
         <spring.boot.version>2.2.6.RELEASE</spring.boot.version>
         <spring.cloud.version>Hoxton.SR4</spring.cloud.version>
-        <spring.cloud.alibaba.version>2.2.6.RELEASE</spring.cloud.alibaba.version>
+        <spring.cloud.alibaba.version>2.2.1.RELEASE</spring.cloud.alibaba.version>
         <mybatis.plus.version>3.3.1</mybatis.plus.version>
     </properties>
 
