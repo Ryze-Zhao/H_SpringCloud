@@ -59,13 +59,14 @@ public class PaymentController {
         }
         return this.discoveryClient;
     }
+
+    @GetMapping(value = "/payment/lb")
+    public Result getPaymentLB() {
+        return Result.ok("成功", serverPort);
+    }
 }
 
-//
-//    @GetMapping(value = "/payment/lb")
-//    public String getPaymentLB() {
-//        return serverPort;
-//    }
+
 //
 //    @GetMapping(value = "/payment/feign/timeout")
 //    public String paymentFeignTimeout() {
