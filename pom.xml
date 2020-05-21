@@ -24,6 +24,8 @@
         <module>cloud_consumer_order_consul_86</module>
         <!--公共包-->
         <module>cloud_api_commons</module>
+        <!-- OpenFeign使用模 -->
+        <module>cloud_consumer_order_feign_80</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
