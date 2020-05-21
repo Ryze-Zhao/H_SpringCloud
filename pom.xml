@@ -22,6 +22,8 @@
         <!-- 下面两个子模块：是Consul作为注册中心 -->
         <module>cloud_provider_payment_8006</module>
         <module>cloud_consumer_order_consul_86</module>
+        <!--公共包-->
+        <module>cloud_api_commons</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
