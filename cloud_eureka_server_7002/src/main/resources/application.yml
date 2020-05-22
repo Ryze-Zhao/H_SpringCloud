@@ -1,25 +1,6 @@
-server:
-  port: 7002
-
-
-eureka:
-  instance:
-    #eureka服务端的实例名称
-    #    hostname: localhost
-    #这里需要改为C:\Windows\System32\drivers\etc\HOSTS配的域名
-    hostname: eureka7002.com
-  client:
-    #false表示不向注册中心注册自己。
-    register-with-eureka: false
-    #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
-    fetch-registry: false
-    service-url:
-      #单机就是7001自己
-      #      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-      #集群指向其它eureka
-      defaultZone: http://eureka7001.com:7001/eureka/
-#  server:
-    #关闭自我保护机剂，保证不可用服务被及时剔除
-#    enable-self-preservation: false
-#    #eureka server清理无效节点的时间间隔，默认60000毫秒，即60秒
-#    eviction-interval-timer-in-ms: 2000
+spring:
+  profiles:
+    #单机配置
+#    active: ${PROFILE_ACTIVE:single}
+    #集群配置
+    active: ${PROFILE_ACTIVE:cluster}
