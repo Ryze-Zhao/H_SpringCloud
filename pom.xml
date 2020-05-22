@@ -22,9 +22,9 @@
         <!-- 下面两个子模块：是Consul作为注册中心 -->
         <module>cloud_provider_payment_8006</module>
         <module>cloud_consumer_order_consul_86</module>
-        <!--公共包-->
+        <!--公共包，需要maven install提供给其他模块使用-->
         <module>cloud_api_commons</module>
-        <!-- OpenFeign使用模 -->
+        <!-- OpenFeign使用模块 -->
         <module>cloud_consumer_order_feign_80</module>
     </modules>
 
