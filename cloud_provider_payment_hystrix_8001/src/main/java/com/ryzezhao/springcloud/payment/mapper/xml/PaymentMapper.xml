@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ryzezhao.springcloud.payment.mapper.PaymentMapper">
+    <resultMap id="BaseResultMap" type="com.ryzezhao.springcloud.payment.entities.Payment">
+        <result property="id" column="id"/>
+        <result property="serial" column="serial"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+</mapper>
+
+
