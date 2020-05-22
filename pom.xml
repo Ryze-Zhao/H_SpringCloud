@@ -28,6 +28,7 @@
         <module>cloud_consumer_order_feign_80</module>
         <!-- Hystri相关 -->
         <module>cloud_provider_payment_hystrix_8001</module>
+        <module>cloud_consumer_order_feign_hystrix_80</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->

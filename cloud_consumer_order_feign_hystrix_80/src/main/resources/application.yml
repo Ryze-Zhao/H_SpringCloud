@@ -1,0 +1,21 @@
+spring:
+  application:
+    #千万不要用模块的名字，因为服务使用下划线会导致Ribbon实现负载均衡时请求不到服务
+    name: cloud-consumer-oreder
+
+server:
+  port: 80
+
+eureka:
+  client:
+    service-url:
+      #单机版
+      defaultZone: http://eureka7001.com:7001/eureka
+
+
+#设置feign客户端超时时间(OpenFeign默认支持ribbon)
+ribbon:
+  #指的是建立连接所用的时间，适用于网络状况正常的情况下,两端连接所用的时间
+  ReadTimeout: 6000
+  #指的是建立连接后从服务器读取到可用资源所用的时间
+  ConnectTimeout: 6000
