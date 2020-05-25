@@ -12,10 +12,29 @@ eureka:
       #单机版
       defaultZone: http://eureka7001.com:7001/eureka
 
-
+#Hystrix与ribbon的两个计时器同时计时，先达到时间限制的先执行，也就是如果hystrix时间小于ribbon，那可能未返回就进入fallback方法，因此建议建议配置Hystrix的超时时间要大于等于ribbon的超时时间
 #设置feign客户端超时时间(OpenFeign默认支持ribbon)
 ribbon:
   #指的是建立连接所用的时间，适用于网络状况正常的情况下,两端连接所用的时间
   ReadTimeout: 6000
   #指的是建立连接后从服务器读取到可用资源所用的时间
   ConnectTimeout: 6000
+
+###配置请求超时时间
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 8000
+###配置具体方法超时时间
+    serverMethod:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 8000
+###开启Hystrix断路器
+feign:
+  hystrix:
+    enabled: true

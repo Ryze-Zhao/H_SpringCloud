@@ -1,6 +1,8 @@
 package com.ryzezhao.springcloud.order;
 
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.ryzezhao.springcloud.common.Result;
 import com.ryzezhao.springcloud.entities.PaymentVO;
 import lombok.extern.slf4j.Slf4j;
@@ -25,11 +27,20 @@ public class OrderController {
         return paymentVOResult;
     }
 
+    @HystrixCommand(fallbackMethod = "paymentInfo_TimeOut_Fallback", commandProperties = {
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "3000")
+    })
     @GetMapping("/hystrix/timeout/{id}")
     public Result paymentInfo_TimeOut(@PathVariable("id") Integer id) {
-//        int age = 10 / 0;
+        //我们也可以人为制造异常，也是会调用fallbackMethod
+//        int age = 10/0;
         Result<String> paymentVOResult = paymentFeignHystrixService.paymentInfo_TimeOut(id);
         log.info("*****result: " + paymentVOResult.getResult());
         return paymentVOResult;
+    }
+
+    public Result paymentInfo_TimeOut_Fallback(Integer id) {
+        String result = "服务消费者80：服务提供者8001系统繁忙或者本服务运行出错请检查,o(╥﹏╥)o呜呜" + id;
+        return Result.error(result);
     }
 }
