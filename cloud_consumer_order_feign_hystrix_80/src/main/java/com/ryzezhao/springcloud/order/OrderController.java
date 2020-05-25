@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
-@DefaultProperties(defaultFallback = "payment_Global_FallBack")
+//@DefaultProperties(defaultFallback = "payment_Global_FallBack")
 @RequestMapping("/cloud/consumer")
 public class OrderController {
     @Autowired
@@ -31,23 +31,23 @@ public class OrderController {
 
 /*    @HystrixCommand(fallbackMethod = "paymentInfo_TimeOut_Fallback", commandProperties = {
             @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "3000")
-    })*/
-    @HystrixCommand
+    })
+    @HystrixCommand*/
     @GetMapping("/hystrix/timeout/{id}")
     public Result paymentInfo_TimeOut(@PathVariable("id") Integer id) {
         //我们也可以人为制造异常，也是会调用fallbackMethod
-        int age = 10/0;
+//        int age = 10/0;
         Result<String> paymentVOResult = paymentFeignHystrixService.paymentInfo_TimeOut(id);
         log.info("*****result: " + paymentVOResult.getResult());
         return paymentVOResult;
     }
 
-    public Result paymentInfo_TimeOut_Fallback(Integer id) {
-        String result = "服务消费者80：服务提供者8001系统繁忙或者本服务运行出错请检查,o(╥﹏╥)o呜呜" + id;
-        return Result.error(result);
-    }
-
-    public Result payment_Global_FallBack() {
-        return Result.error("Global异常处理信息，请稍后再试，/(ㄒoㄒ)/~~");
-    }
+//    public Result paymentInfo_TimeOut_Fallback(Integer id) {
+//        String result = "服务消费者80：服务提供者8001系统繁忙或者本服务运行出错请检查,o(╥﹏╥)o呜呜" + id;
+//        return Result.error(result);
+//    }
+//
+//    public Result payment_Global_FallBack() {
+//        return Result.error("Global异常处理信息，请稍后再试，/(ㄒoㄒ)/~~");
+//    }
 }
