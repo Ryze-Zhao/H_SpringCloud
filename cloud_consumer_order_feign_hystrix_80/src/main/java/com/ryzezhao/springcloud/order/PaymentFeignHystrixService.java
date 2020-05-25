@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(value = "cloud-payment-hystrix-service")
 public interface PaymentFeignHystrixService {
     @GetMapping(value = "/cloud/pay/payment/hystrix/ok/{id}")
-    Result<String> paymentInfo_OK(@PathVariable("id") String id);
+    Result<String> paymentInfo_OK(@PathVariable("id") Integer id);
 
     @GetMapping(value = "/cloud/pay/payment/hystrix/timeout/{id}")
-    Result<String> paymentInfo_TimeOut(@PathVariable("id") String id);
+    Result<String> paymentInfo_TimeOut(@PathVariable("id") Integer id);
 }

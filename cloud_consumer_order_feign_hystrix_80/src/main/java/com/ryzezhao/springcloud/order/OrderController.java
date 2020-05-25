@@ -19,14 +19,14 @@ public class OrderController {
     private PaymentFeignHystrixService paymentFeignHystrixService;
 
     @GetMapping("/hystrix/ok/{id}")
-    public Result paymentInfo_OK(@PathVariable("id") String id) {
+    public Result paymentInfo_OK(@PathVariable("id") Integer id) {
         Result<String> paymentVOResult = paymentFeignHystrixService.paymentInfo_OK(id);
         log.info("*****result: " + paymentVOResult.getResult());
         return paymentVOResult;
     }
 
     @GetMapping("/hystrix/timeout/{id}")
-    public Result paymentInfo_TimeOut(@PathVariable("id") String id) {
+    public Result paymentInfo_TimeOut(@PathVariable("id") Integer id) {
 //        int age = 10 / 0;
         Result<String> paymentVOResult = paymentFeignHystrixService.paymentInfo_TimeOut(id);
         log.info("*****result: " + paymentVOResult.getResult());
