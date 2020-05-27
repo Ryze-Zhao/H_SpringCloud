@@ -50,16 +50,17 @@ public class PaymentServiceImpl extends ServiceImpl<PaymentMapper, Payment> impl
      */
     @HystrixCommand(fallbackMethod = "paymentCircuitBreakerFallBack", commandProperties = {
             @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),// 是否开启断路器
-            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),// 请求次数
-            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"), // 时间窗口期
-            @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60"),// 失败率达到多少后跳闸
+            @HystrixProperty(name = "metrics.rollingStats.timeInMilliseconds", value = "10000"),//检测时间，默认10秒
+            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),// 请求次数，默认20次，检测时间内必须达到该请求次数才有统计意义
+            @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60"),// 失败率，默认50%，超过该失败率后跳闸（结合上边就是10秒内有20次，如果超过50%的）
+            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "5000"), // 时间窗口期，默认是5秒，这5秒内会重新检测触发条件，判断是否关闭熔断器
     })
     @Override
     public String paymentCircuitBreaker(Integer id) {
         if (id < 0) {
             throw new RuntimeException("******id 不能负数");
         }
-        return Thread.currentThread().getName()  + "    调用成功，流水号: " + IdUtil.simpleUUID();
+        return Thread.currentThread().getName() + "    调用成功，流水号: " + IdUtil.simpleUUID();
     }
 
     public String paymentCircuitBreakerFallBack(Integer id) {
