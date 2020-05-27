@@ -43,9 +43,9 @@ H_SpringCloud父模块
 9.  cloud_consumer_order_consul_86                              SpringCloud(H版)：服务消费者86（以Consul作为注册中心）
 10. cloud_api_commons                                           SpringCloud(H版)：公共包
 11. cloud_consumer_order_feign_80                               SpringCloud(H版)：服务消费者80（OpenFeign使用模块）
-12. cloud_provider_payment_hystrix_8001                         SpringCloud(H版)：Hystrix服务提供者8001（代码）
-13. cloud_consumer_order_feign_hystrix_80                       SpringCloud(H版)：Hystrix服务消费者80（代码）
-
+12. cloud_provider_payment_hystrix_8001                         SpringCloud(H版)：Hystrix服务提供者8001
+13. cloud_consumer_order_feign_hystrix_80                       SpringCloud(H版)：Hystrix服务消费者80
+14. cloud_hystrix_dashboard_18001                               SpringCloud(H版)：Hystrix图形化Dashboard18001
 
 
 
