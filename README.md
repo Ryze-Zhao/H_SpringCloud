@@ -46,7 +46,7 @@ H_SpringCloud父模块
 12. cloud_provider_payment_hystrix_8001                         SpringCloud(H版)：Hystrix服务提供者8001
 13. cloud_consumer_order_feign_hystrix_80                       SpringCloud(H版)：Hystrix服务消费者80
 14. cloud_hystrix_dashboard_18001                               SpringCloud(H版)：Hystrix图形化Dashboard18001
-
+15. cloud_gateway_server_8888                                   SpringCloud(H版)：GateWay路由网关8888
 
 
 
