@@ -14,7 +14,10 @@ spring:
           #uri: http://localhost:8001         #匹配后提供服务的路由地址，只能是服务提供者单机才可以，但是我们是集群，就没办法ribbon负载均衡了，需要使用下面的
           uri: lb://cloud-payment-service     #匹配后提供服务的路由地址，只要挂到Eureka的服务提供者集群都可以负载均衡，同名即可
           predicates:
-            - Path=/cloud/pay/payment/**         # 断言，路径相匹配的进行路由，需要参考服务的Controller
+            - Path=/cloud/pay/payment/**                                # 断言，路径相匹配的进行路由，需要参考服务的Controller
+            - After=2020-05-29T20:11:34.507+08:00[Asia/Shanghai]        #断言，必须在这个时间点后，才可以访问
+            - Before=2020-05-29T21:11:34.507+08:00[Asia/Shanghai]       #断言，必须在这个时间点前，才可以访问
+            - Between=2020-05-29T20:11:34.507+08:00[Asia/Shanghai],2020-05-29T21:11:34.507+08:00[Asia/Shanghai] #断言，必须在这两个个时间点之间，才可以访问
 
         - id: payment_routh2 #payment_route    #路由的ID，没有固定规则但要求唯一，建议配合服务名
           #uri: http://localhost:8001          #匹配后提供服务的路由地址，只能是服务提供者单机才可以，但是我们是集群，就没办法ribbon负载均衡了，需要使用下面的
