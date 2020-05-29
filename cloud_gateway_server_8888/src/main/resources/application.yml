@@ -15,7 +15,8 @@ spring:
           uri: lb://cloud-payment-service     #匹配后提供服务的路由地址，只要挂到Eureka的服务提供者集群都可以负载均衡，同名即可
           predicates:
              - Path=/cloud/pay/payment/**                                # 断言，路径相匹配的进行路由，需要参考服务的Controller
-             - Query=green,\d+                                            #断言：必须带指定参数，前面参数名，后面是参数值（可用正则）
+             - RemoteAddr=192.168.1.1/24                                  #断言：通过无类别域间路由(IPv4 or IPv6)列表匹配路由。需要符合此IP
+#             - Query=green,\d+                                            #断言：必须带指定参数，前面参数名，后面是参数值（可用正则）
 #             - Method=GET,POST                                            #断言：必须是指定的请求类型，才可以访问
 #             - Host=**.ryzezhao.com,**.hehaozhao.top                      #断言：必须带Host，并且要符合要求
 #             - After=2020-05-29T20:11:34.507+08:00[Asia/Shanghai]        #断言，必须在这个时间点后，才可以访问
