@@ -31,8 +31,10 @@
         <module>cloud_consumer_order_feign_hystrix_80</module>
         <!-- Hystri相关，可视化 -->
         <module>cloud_hystrix_dashboard_18001</module>
-        <!-- 路由网关模块 -->
+        <!-- SpringCloud GateWay路由网关模块 -->
         <module>cloud_gateway_server_8888</module>
+        <!-- SpringCloud Config模块 -->
+        <module>cloud_config_server_3300</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
