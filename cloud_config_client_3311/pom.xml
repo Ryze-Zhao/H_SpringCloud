@@ -17,6 +17,12 @@
             <artifactId>cloud_api_commons</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <!--添加消息总线RabbitMQ支持-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
+
 
 <!--        相对于3300模块，这里从spring-cloud-config-server改为spring-cloud-starter-config-->
         <dependency>

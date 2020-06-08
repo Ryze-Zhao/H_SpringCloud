@@ -36,6 +36,7 @@
         <!-- SpringCloud Config模块 -->
         <module>cloud_config_server_3300</module>
         <module>cloud_config_client_3310</module>
+        <module>cloud_config_client_3311</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
