@@ -37,6 +37,8 @@
         <module>cloud_config_server_3300</module>
         <module>cloud_config_client_3310</module>
         <module>cloud_config_client_3311</module>
+        <!-- SpringCloud Stream模块 -->
+        <module>cloud_stream_rabbitmq_provider_8801</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
