@@ -22,9 +22,8 @@ Maven版本：3.5+
 
 
 
-#### 安装教程
-1. 根据git-url进行Clone
-2. 导入对应模块
+#### 建议
+1. 所有yml的配置文件，改为yaml
 
 
 
@@ -50,8 +49,9 @@ H_SpringCloud父模块
 16. cloud_config_server_3300                                    SpringCloud(H版)：Config+Bus配置中心3300
 17. cloud_config_client_3310                                    SpringCloud(H版)：Config+Bus配置客户端3310
 18. cloud_config_client_3311                                    SpringCloud(H版)：Config+Bus配置客户端3311
-
-
+19. cloud_stream_rabbitmq_provider_8801                         SpringCloud(H版)：Spring Cloud Stream消息生产者8801
+20. cloud_stream_rabbitmq_consumer_8802                         SpringCloud(H版)：Spring Cloud Stream消息消费者8802
+21. cloud_stream_rabbitmq_consumer_8803                         SpringCloud(H版)：Spring Cloud Stream消息消费者8803
 
 
 
