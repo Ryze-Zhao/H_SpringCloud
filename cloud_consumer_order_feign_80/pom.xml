@@ -12,6 +12,11 @@
     <artifactId>cloud_consumer_order_feign_80</artifactId>
 
     <dependencies>
+        <!--包含了sleuth+zipkin-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
         <!-- 引入自己定义的api通用包-->
         <dependency>
             <groupId>com.ryzezhao.springcloud</groupId>
