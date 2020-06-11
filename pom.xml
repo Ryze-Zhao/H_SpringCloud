@@ -40,6 +40,7 @@
         <!-- SpringCloud Stream模块 -->
         <module>cloud_stream_rabbitmq_provider_8801</module>
         <module>cloud_stream_rabbitmq_consumer_8802</module>
+        <module>cloud_stream_rabbitmq_consumer_8803</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
