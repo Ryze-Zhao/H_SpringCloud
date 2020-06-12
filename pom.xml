@@ -41,6 +41,10 @@
         <module>cloud_stream_rabbitmq_provider_8801</module>
         <module>cloud_stream_rabbitmq_consumer_8802</module>
         <module>cloud_stream_rabbitmq_consumer_8803</module>
+        <!-- SpringCloud Alibaba部分 -->
+        <!-- Nacos部分 -->
+        <module>cloud_alibaba_provider_payment_9001</module>
+        <module>cloud_alibaba_provider_payment_9002</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
