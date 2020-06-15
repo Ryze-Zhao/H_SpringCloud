@@ -52,7 +52,10 @@ H_SpringCloud父模块
 19. cloud_stream_rabbitmq_provider_8801                         SpringCloud(H版)：Spring Cloud Stream消息生产者8801
 20. cloud_stream_rabbitmq_consumer_8802                         SpringCloud(H版)：Spring Cloud Stream消息消费者8802
 21. cloud_stream_rabbitmq_consumer_8803                         SpringCloud(H版)：Spring Cloud Stream消息消费者8803
-
+22. cloud_alibaba_provider_payment_9001                        	SpringCloud(H版)：服务提供者9001（以Nacos作为注册中心）
+23. cloud_alibaba_provider_payment_9002                         SpringCloud(H版)：服务提供者9002（以Nacos作为注册中心）
+24. cloud_alibaba_consumer_payment_83                           SpringCloud(H版)：服务消费者83（以Nacos作为注册中心）
+25. cloud_alibaba_config_nacos_client_3377                      SpringCloud(H版)：配置客户端3377（以Nacos作为配置中心）
 
 
 
