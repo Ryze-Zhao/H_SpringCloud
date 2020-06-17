@@ -48,6 +48,7 @@
         <module>cloud_alibaba_consumer_payment_83</module>
         <!-- 以Nacos作为配置中心       -->
         <module>cloud_alibaba_config_nacos_client_3377</module>
+        <module>cloud_alibaba_sentinel_service_8401</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
