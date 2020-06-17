@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 public class FlowLimitController {
     @GetMapping("/testA")
     public String testA() {
-        try { TimeUnit.SECONDS.sleep(3); } catch (InterruptedException e) { e.printStackTrace(); }
+//        try { TimeUnit.SECONDS.sleep(3); } catch (InterruptedException e) { e.printStackTrace(); }
         return "------testA";
     }
 
