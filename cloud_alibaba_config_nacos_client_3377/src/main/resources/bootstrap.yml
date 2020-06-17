@@ -8,12 +8,14 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848 #Nacos服务注册中心地址
+#        server-addr: localhost:8848 #Nacos服务注册中心地址
+        server-addr: 111.229.36.187:1111 #Nacos服务注册中心地址(集群版本，只需要改这个地址为nginx代理的地址)
       config:
-        server-addr: localhost:8848 #Nacos作为配置中心地址
+#        server-addr: localhost:8848 #Nacos服务注册中心地址
+        server-addr: 111.229.36.187:1111 #Nacos作为配置中心地址(集群版本，只需要改这个地址为nginx代理的地址)
         file-extension: yaml #指定yaml格式的配置(实际上nacos是用正式的yaml，而yml是不合规的（具体自行搜索），因此其实本次H版的所有配置文件都应该使用yaml)
-        group: DEV_GROUP
-        namespace: 7e4dfb5a-5a7e-482d-bcb5-effb40b52a6f  #nacos里dev命名空间的id
+#        group: DEV_GROUP
+#        namespace: 7e4dfb5a-5a7e-482d-bcb5-effb40b52a6f  #nacos里dev命名空间的id
 
 # ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
 #第一个就是上面的服务名称-第二个是application.yml配置文件中的环境.第三个是nacos里面自己选的配置格式，如yaml
