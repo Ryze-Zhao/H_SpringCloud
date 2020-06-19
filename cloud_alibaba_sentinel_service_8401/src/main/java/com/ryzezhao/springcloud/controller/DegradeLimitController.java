@@ -28,4 +28,11 @@ public class DegradeLimitController {
         int i = 10/0;
         return "------testG 测试异常比例";
     }
+
+    @GetMapping("/testH")
+    public String testH() {
+        log.info("testH 测试异常数");
+        int i = 10/0;
+        return "------testH 测试异常数";
+    }
 }
