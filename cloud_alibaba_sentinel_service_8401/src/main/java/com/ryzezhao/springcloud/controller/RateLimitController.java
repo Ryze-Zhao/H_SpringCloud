@@ -42,4 +42,13 @@ public class RateLimitController {
         return Result.ok("按URL限流测试OK", paymentVO);
     }
 
+    @GetMapping("/customerBlockHandler")
+    @SentinelResource(value = "customerBlockHandler", blockHandlerClass = CustomerBlockHandler.class,blockHandler = "customerHandlerException2")
+    public Result customerBlockHandler() {
+        PaymentVO paymentVO = new PaymentVO();
+        paymentVO.setId("6e9ff97a427a1afdabbe3c461b99bc1b");
+        paymentVO.setSerial("cloud_alibaba_sentinel_service_8401");
+        log.info("------customerBlockHandler");
+        return Result.ok("按客戶自定义", paymentVO);
+    }
 }
