@@ -29,4 +29,17 @@ public class RateLimitController {
         log.info("------handleException");
         return Result.error(exception.getClass().getCanonicalName() + "      服务不可用");
     }
+
+
+    @GetMapping("/byUrl")
+//根据URL限流，可以不需要 @SentinelResource
+    @SentinelResource(value = "byResource", blockHandler = "handleException")
+    public Result byUrl() {
+        PaymentVO paymentVO = new PaymentVO();
+        paymentVO.setId("6e9ff97a427a1afdabbe3c461b99bc1b");
+        paymentVO.setSerial("cloud_alibaba_sentinel_service_8401");
+        log.info("------byUrl");
+        return Result.ok("按URL限流测试OK", paymentVO);
+    }
+
 }
