@@ -49,6 +49,10 @@
         <!-- 以Nacos作为配置中心       -->
         <module>cloud_alibaba_config_nacos_client_3377</module>
         <module>cloud_alibaba_sentinel_service_8401</module>
+        <!-- 服务熔断Fallback和BlockHandler对比 -->
+        <module>cloud_alibaba_nacos_provider_payment_9003</module>
+        <module>cloud_alibaba_nacos_provider_payment_9004</module>
+        <module>cloud_alibaba_nacos_consumer_order_84</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
