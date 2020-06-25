@@ -24,10 +24,12 @@ public class CircleBreakerController {
     private RestTemplate restTemplate;
 
     @RequestMapping("/consumer/fallback/{id}")
-    @SentinelResource(value = "fallback") //没有配置
-    //@SentinelResource(value = "fallback",fallback = "handlerFallback") //fallback只负责业务异常
-    //@SentinelResource(value = "fallback",blockHandler = "blockHandler") //blockHandler只负责sentinel控制台配置违规
-    //@SentinelResource(value = "fallback", fallback = "handlerFallback", blockHandler = "blockHandler",exceptionsToIgnore = {IllegalArgumentException.class})
+//    @SentinelResource(value = "fallback") //没有配置
+//    @SentinelResource(value = "fallback",fallback = "handlerFallback") //fallback只负责业务异常
+//    @SentinelResource(value = "fallback",blockHandler = "blockHandler") //blockHandler只负责sentinel控制台配置违规
+//    @SentinelResource(value = "fallback", fallback = "handlerFallback", blockHandler = "blockHandler")//同时配置fallback、blockHandler
+    //配置fallback例外项目
+    @SentinelResource(value = "fallback", fallback = "handlerFallback", blockHandler = "blockHandler",exceptionsToIgnore = {IllegalArgumentException.class})
     public Result fallback(@PathVariable String id) {
         Result result = restTemplate.getForObject(SERVICE_URL + "/paymentSQL/" + id, Result.class, id);
         if ("id4".equals(id)) {
@@ -39,10 +41,10 @@ public class CircleBreakerController {
     }
     //本例是fallback
     public Result handlerFallback(@PathVariable String id,Throwable e) {
-        return Result.error(444,"兜底异常handlerFallback,exception内容"+e.getMessage());
+        return Result.error(444,"兜底异常handlerFallback,exception内容："+e.getMessage());
     }
     //本例是blockHandler
     public Result blockHandler(@PathVariable  String id, BlockException blockException) {
-        return Result.error(445,"lockHandler-sentinel限流,无此流水: blockException"+blockException.getMessage());
+        return Result.error(445,"lockHandler-sentinel限流,无此流水: blockException："+blockException.getMessage());
     }
 }
