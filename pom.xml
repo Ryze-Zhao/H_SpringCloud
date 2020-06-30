@@ -55,7 +55,7 @@
         <module>cloud_alibaba_nacos_consumer_order_84</module>
         <!-- Seata演示模块-->
         <module>seata_account_service_2003</module>
-
+        <module>seata_storage_service_2002</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
