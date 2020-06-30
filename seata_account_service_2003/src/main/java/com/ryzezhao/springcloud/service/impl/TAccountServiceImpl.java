@@ -25,7 +25,7 @@ public class TAccountServiceImpl extends ServiceImpl<TAccountMapper, TAccount> i
         tAccount.setResidue(tAccount.getResidue().subtract(money));
         tAccount.setUsed(tAccount.getUsed().add(money));
         boolean result = this.saveOrUpdate(tAccount);
-        try { TimeUnit.SECONDS.sleep(20); } catch (InterruptedException e) { e.printStackTrace(); }
+//        try { TimeUnit.SECONDS.sleep(20); } catch (InterruptedException e) { e.printStackTrace(); }
         log.info("------->account-service中扣减账户余额结束");
         return result;
     }
