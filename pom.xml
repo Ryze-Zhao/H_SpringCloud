@@ -56,6 +56,7 @@
         <!-- Seata演示模块-->
         <module>seata_account_service_2003</module>
         <module>seata_storage_service_2002</module>
+        <module>seata_order_service_2001</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
