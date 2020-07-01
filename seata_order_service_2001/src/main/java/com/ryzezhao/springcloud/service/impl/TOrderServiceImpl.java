@@ -26,7 +26,7 @@ public class TOrderServiceImpl extends ServiceImpl<TOrderMapper, TOrder> impleme
     private TAccountService tAccountService;
 
     @Override
-//    @GlobalTransactional(name = "gt-create-order",rollbackFor = Exception.class)
+    @GlobalTransactional(name = "gt-create-order",rollbackFor = Exception.class)
     public boolean create(TOrder order) {
         log.info("----->开始新建订单");
         //1 新建订单
